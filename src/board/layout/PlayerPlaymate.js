@@ -16,27 +16,27 @@ export class PlayerPlaymate extends React.Component {
         return (
             <div className={`PlayerPlaymate ${this.state.expanded ? 'PlayerPlaymate--expanded' : ''} PlayerPlaymate--${this.props.isLocalPlayer ? 'local' : 'remote'}`}>
                 <div className={`PlayerPlaymate__party-leader-container`} >
-                    <CardWrapper>
+                    <CardWrapper cardType="leader">
 
                     </CardWrapper>
                 </div>
                 <div className="PlayerPlaymate__heroes-container">
                     <div className="PlayerPlaymate__hero-container">
-                        <CardWrapper>
+                        <CardWrapper cardType="default">
 
                         </CardWrapper>
                     </div>
                     <div className="PlayerPlaymate__hero-container">
-                        <CardWrapper>
+                        <CardWrapper cardType="default">
 
                         </CardWrapper>
                     </div>
                     <div className="PlayerPlaymate__hero-container">
-                        <CardWrapper>
+                        <CardWrapper cardType="default">
 
                         </CardWrapper>
                     </div>
-                    
+
                 </div>
             </div>
         );

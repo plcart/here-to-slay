@@ -1,0 +1,33 @@
+$height: 10;
+
+.CardPile {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  &--light &__card {
+    border: 1px solid #727169;
+    border-top-width: 0px;
+  }
+
+  &--dark &__card {
+    border: 1px solid #000b29;
+    border-top-width: 0px;
+  }
+
+  &__card {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    @for $i from 2 through $height {
+      &:nth-child(#{$i}) {
+        translate: #{$i - 1}px -#{$i - 1}px;
+      }
+    }
+
+    &:nth-child(#{$height}) ~ & {
+      translate: #{$height - 1}px -#{$height - 1}px;
+    }
+  }
+}

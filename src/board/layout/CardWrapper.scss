@@ -4,19 +4,14 @@
 .CardWrapper {
   position: relative;
   display: flex;
-  border-radius: 8px;
+  border-radius: 4px;
   height: 100%;
-  background-color: $card-light-background;
   width: 100%;
 
   @media (prefers-reduced-motion: no-preference) {
     &--flip-face-down {
       &:after {
-        background-color: $card-light-background;
         content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
         animation: flip-face-down 150ms linear forwards;
       }
 
@@ -28,6 +23,41 @@
         box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
         animation: flip-face-up 150ms linear 150ms forwards;
       }
+    }
+  }
+
+  &--leader {
+    &:after {
+      background: url("/assets/face-down-party-leader.jpg") no-repeat;
+    }
+  }
+
+  &--monster {
+    &:after {
+      background: url("/assets/face-down-monster.jpg") no-repeat;
+    }
+  }
+
+  &--default {
+    &:after {
+      background: url("/assets/face-down-default.jpg") no-repeat;
+    }
+  }
+
+  &:after {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: contain;
+    border-radius: 4px;
+  }
+
+  &--face-down {
+    &:after {
+      content: "";
+      transform: none;
+      box-shadow: none;
     }
   }
 }
