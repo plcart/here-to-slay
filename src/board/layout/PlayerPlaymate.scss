@@ -1,0 +1,47 @@
+.PlayerPlaymate {
+  padding: 4px;
+  display: flex;
+  &--remote {
+    width: 100%;
+    flex: 1 1;
+    max-height: calc(75vh / 5);
+  }
+  &--local {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__party-leader-container {
+    height: 100%;
+  }
+
+  &--local &__party-leader-container {
+    width: 16vh;
+  }
+
+  &--remote &__party-leader-container {
+    width: 10vh;
+  }
+
+  &__heroes-container {
+    height: 100%;
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+  }
+
+  &--local &__hero-container {
+    height: calc(50% - 4px);
+    margin: 2px;
+    width: 8vh;
+  }
+
+  &--remote &__hero-container {
+    height: calc(50% - 2px);
+    margin: 1px;
+    width: 5vh;
+  }
+}

@@ -1,0 +1,40 @@
+@import "./variables";
+
+@keyframes flip-face-down {
+  0% {
+    translate: 0 0;
+    box-shadow: $elevation-0;
+  }
+
+  25% {
+    translate: -5px -5px;
+    box-shadow: $elevation-1;
+    transform: rotate3d(0, 1, 0, -30deg);
+  }
+
+  100% {
+    translate: -10px -10px;
+    box-shadow: $elevation-2;
+    transform: rotate3d(0, 1, 0, -90deg);
+  }
+}
+
+@keyframes flip-face-up {
+  0% {
+    translate: -10px -10px;
+    box-shadow: $elevation-2;
+    transform: rotate3d(0, 1, 0, -90deg);
+  }
+
+  75% {
+    translate: -5px -5px;
+    box-shadow: $elevation-1;
+    transform: rotate3d(0, 1, 0, 15deg);
+  }
+
+  100% {
+    translate: 0 0;
+    box-shadow: $elevation-0;
+    transform: rotate3d(0, 1, 0, 0deg);
+  }
+}

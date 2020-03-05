@@ -1,0 +1,32 @@
+.CentralPlaymate {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-content: center;
+  flex-wrap: wrap;
+  overflow: auto;
+  &__card-pile-container,
+  &__monsters-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__monster-container,
+  &__monster-pile-container {
+    height: 25vh;
+    width: 16vh;
+    margin: 2px;
+    border: 1px solid blueviolet;
+  }
+
+  &__discard-pile-container,
+  &__draw-pile-container {
+    height: calc(12.5vh - 2px);
+    width: 8vh;
+    margin: 2px;
+    border: 1px solid blueviolet;
+  }
+
+  &__card-pile-container &__card-pile-container{
+      flex-direction: column;
+  }
+}

@@ -1,0 +1,38 @@
+.HeroCard {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 8px;
+
+  &--fighter {
+    background-color: #98272d;
+  }
+
+  &--ranger {
+    background-color: #225c3b;
+  }
+
+  &--bard {
+    background-color: #c5512f;
+  }
+
+  &--thief {
+    background-color: #064e7c;
+  }
+
+  &--guardian {
+    background-color: #ecac23;
+  }
+
+  &--wizard {
+    background-color: #772c90;
+  }
+
+  &__container {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: #f5f3e6;
+  }
+}
