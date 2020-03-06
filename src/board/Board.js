@@ -3,6 +3,7 @@ import './Board.scss';
 
 import { PlayerPlaymate } from './layout/PlayerPlaymate';
 import { CentralPlaymate } from './layout/CentralPlaymate';
+import { PlayerHand } from './layout/PlayerHand';
 
 export class Board extends React.Component {
     render() {
@@ -21,6 +22,9 @@ export class Board extends React.Component {
                 </div>
                 <div className="Board__player-playmate">
                     <PlayerPlaymate isLocalPlayer="true" playerName="Arthur"></PlayerPlaymate>
+                    <div className="Board__player-hand-container">
+                        <PlayerHand></PlayerHand>
+                    </div>
                 </div>
             </div>
         );

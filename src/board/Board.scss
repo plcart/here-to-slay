@@ -10,6 +10,8 @@
   &__player-playmate {
     flex: 1 1;
     max-height: 25%;
+    position: relative;
+    overflow: hidden;
   }
 
   &__players-playmate {
@@ -20,6 +22,18 @@
     flex-direction: column;
     justify-content: space-between;
     position: relative;
+  }
+
+  &__player-hand-container {
+    position: absolute;
+    top: 65%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 200ms linear;
+    &:hover {
+      top: 10px;
+    }
   }
 
   &__central-playmate {
