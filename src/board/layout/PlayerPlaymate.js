@@ -2,6 +2,7 @@ import React from 'react';
 import './PlayerPlaymate.scss';
 
 import { CardWrapper } from './CardWrapper';
+import { PartyLeaderCard } from '../card/PartyLeaderCard';
 
 export class PlayerPlaymate extends React.Component {
 
@@ -16,8 +17,8 @@ export class PlayerPlaymate extends React.Component {
         return (
             <div className={`PlayerPlaymate ${this.state.expanded ? 'PlayerPlaymate--expanded' : ''} PlayerPlaymate--${this.props.isLocalPlayer ? 'local' : 'remote'}`}>
                 <div className={`PlayerPlaymate__party-leader-container`} >
-                    <CardWrapper cardType="leader">
-
+                    <CardWrapper cardType="leader" flip="true">
+                        <PartyLeaderCard type={this.props.partyLeader}></PartyLeaderCard>
                     </CardWrapper>
                 </div>
                 <div className="PlayerPlaymate__heroes-container">

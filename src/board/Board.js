@@ -11,17 +11,18 @@ export class Board extends React.Component {
             <div className="Board">
                 <div className="Board__content">
                     <div className="Board__players-playmate">
-                        <PlayerPlaymate playerName="John"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Arya"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Bran"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Robbie"></PlayerPlaymate>
+                        <PlayerPlaymate playerName="John" partyLeader="thief"></PlayerPlaymate>
+                        <PlayerPlaymate playerName="Arya" partyLeader="wizard"></PlayerPlaymate>
+                        <PlayerPlaymate playerName="Bran" partyLeader="bard"></PlayerPlaymate>
+                        <PlayerPlaymate playerName="Robbie" partyLeader="fighter"></PlayerPlaymate>
+                        <PlayerPlaymate playerName="Robbie" partyLeader="ranger"></PlayerPlaymate>
                     </div>
                     <div className="Board__central-playmate">
                         <CentralPlaymate></CentralPlaymate>
                     </div>
                 </div>
                 <div className="Board__player-playmate">
-                    <PlayerPlaymate isLocalPlayer="true" playerName="Arthur"></PlayerPlaymate>
+                    <PlayerPlaymate isLocalPlayer="true" playerName="Arthur" partyLeader="guardian"></PlayerPlaymate>
                     <div className="Board__player-hand-container">
                         <PlayerHand></PlayerHand>
                     </div>

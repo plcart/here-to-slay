@@ -1,0 +1,35 @@
+.PartyLeaderCard {
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  
+  &--guardian {
+    background: url("/assets/party-leaders/guardian-party-leader.png") no-repeat;
+    background-size: contain;
+  }
+
+  &--bard {
+    background: url("/assets/party-leaders/bard-party-leader.png") no-repeat;
+    background-size: contain;
+  }
+
+  &--fighter {
+    background: url("/assets/party-leaders/fighter-party-leader.png") no-repeat;
+    background-size: contain;
+  }
+
+  &--ranger {
+    background: url("/assets/party-leaders/ranger-party-leader.png") no-repeat;
+    background-size: contain;
+  }
+
+  &--thief {
+    background: url("/assets/party-leaders/thief-party-leader.png") no-repeat;
+    background-size: contain;
+  }
+
+  &--wizard {
+    background: url("/assets/party-leaders/wizard-party-leader.png") no-repeat;
+    background-size: contain;
+  }
+}

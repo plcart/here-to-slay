@@ -6,10 +6,9 @@
   padding-left: 10vh;
   &__card {
     transition: all 200ms linear;
-    height: 100%;
-    width: 18vh;
+    height: 90%;
+    width: 16vh;
     margin-left: -10vh;
-    border-radius: 4px;
     &:hover {
       translate: 0px -10px;
       margin-right: 10vh;
