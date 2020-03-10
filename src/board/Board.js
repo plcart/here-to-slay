@@ -4,8 +4,10 @@ import './Board.scss';
 import { PlayerPlaymate } from './layout/PlayerPlaymate';
 import CentralPlaymate from './layout/CentralPlaymate';
 import { PlayerHand } from './layout/PlayerHand';
+import { connect } from 'react-redux';
+import { getLocalPlayer } from '../store/selectors';
 
-export class Board extends React.Component {
+class Board extends React.Component {
     render() {
         return (
             <div className="Board">
@@ -21,13 +23,22 @@ export class Board extends React.Component {
                         <CentralPlaymate></CentralPlaymate>
                     </div>
                 </div>
-                {/* <div className="Board__player-playmate">
-                    <PlayerPlaymate isLocalPlayer="true" playerName="Arthur" partyLeader="guardian"></PlayerPlaymate>
-                    <div className="Board__player-hand-container">
+                <div className="Board__player-playmate">
+                    <PlayerPlaymate isLocalPlayer="true" playerName={this.props.localPlayer.name} partyLeader={this.props.localPlayer.name}></PlayerPlaymate>
+                    {/* <div className="Board__player-hand-container">
                         <PlayerHand></PlayerHand>
-                    </div>
-                </div> */}
-            </div>
+                    </div> */}
+                </div>
+            </div >
         );
     }
 }
+
+const mapStateToProps = state => {
+    const localPlayer = getLocalPlayer(state);
+    return {
+        localPlayer
+    };
+};
+
+export default connect(mapStateToProps, null)(Board);

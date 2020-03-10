@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Board } from './board/Board';
+import Board from './board/Board';
 
 
 function App() {

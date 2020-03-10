@@ -52,7 +52,7 @@ const initialState = {
                 text: 'SLAY this Monster Card & DRAW a card'
             },
             ability: {
-                text: 'Each time you would DESTORY a Hero card, you may STEAL that Hero card instead.'
+                text: 'Each time you would DESTROY a Hero card, you may STEAL that Hero card instead.'
             }
         },
         4: {
