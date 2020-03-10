@@ -21,6 +21,11 @@
     margin: 2px;
   }
 
+  &__monster-container:hover{
+    transform: scale(1.5);
+    z-index: 4;
+  }
+
   &__discard-pile-container,
   &__draw-pile-container {
     height: calc(12.5vh - 8px);
