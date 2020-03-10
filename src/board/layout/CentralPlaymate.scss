@@ -6,7 +6,9 @@
   width: 100%;
   align-content: center;
   flex-wrap: wrap;
-  overflow: auto;
+  overflow: hidden;
+  justify-content: flex-end;
+
   &__card-pile-container,
   &__monsters-container {
     display: flex;

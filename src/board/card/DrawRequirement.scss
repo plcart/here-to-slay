@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+
+.DrawRequirement {
+  margin: 2px;
+  display: flex;
+  align-items: center;
+
+  &--red &__value {
+    background-color: #e02325;
+  }
+
+  &--green &__value {
+    background-color: #70a84d;
+  }
+
+  &__value {
+    flex: 0 0 2em;
+    color: #fff;
+    height: 2em;
+    width: 2em;
+    display: inline-block;
+    font-size: 0.8em;
+    line-height: 2em;
+    text-align: center;
+    border: 1px solid $card-light-background;
+    border-radius: 1px;
+    font-weight: 700;
+    margin-right: 4px;
+  }
+
+  &__text {
+    font-size: 0.8em;
+    color: #fff;
+  }
+}

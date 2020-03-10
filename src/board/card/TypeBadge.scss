@@ -1,0 +1,11 @@
+.TypeBadge {
+  height: 1.3em;
+  width: 1.3em;
+  display: inline-block;
+  margin: 0 1px;
+
+  &--hero {
+    background: url("/assets/icon/ic-hero.png") center/contain no-repeat;
+  }
+  
+}
