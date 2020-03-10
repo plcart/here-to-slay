@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   overflow: hidden;
   justify-content: flex-end;
-
+  padding-right: 16px;
   &__card-pile-container,
   &__monsters-container {
     display: flex;
