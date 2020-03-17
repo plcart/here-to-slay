@@ -5,7 +5,7 @@ import { PlayerPlaymate } from './layout/PlayerPlaymate';
 import CentralPlaymate from './layout/CentralPlaymate';
 import { PlayerHand } from './layout/PlayerHand';
 import { connect } from 'react-redux';
-import { getLocalPlayer } from '../store/selectors';
+import { getLocalPlayer, getRemotePlayers } from '../store/selectors';
 
 class Board extends React.Component {
     render() {
@@ -13,18 +13,14 @@ class Board extends React.Component {
             <div className="Board">
                 <div className="Board__content">
                     <div className="Board__players-playmate">
-                        {/* <PlayerPlaymate playerName="John" partyLeader="thief"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Arya" partyLeader="wizard"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Bran" partyLeader="bard"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Robbie" partyLeader="fighter"></PlayerPlaymate>
-                        <PlayerPlaymate playerName="Robbie" partyLeader="ranger"></PlayerPlaymate> */}
+                        {this.props.remotePlayers.map(player => <PlayerPlaymate key={player.id} playerName={player.name} partyLeader={player.partyLeader}></PlayerPlaymate>)}
                     </div>
                     <div className="Board__central-playmate">
                         <CentralPlaymate></CentralPlaymate>
                     </div>
                 </div>
                 <div className="Board__player-playmate">
-                    <PlayerPlaymate isLocalPlayer="true" playerName={this.props.localPlayer.name} partyLeader={this.props.localPlayer.name}></PlayerPlaymate>
+                    <PlayerPlaymate isLocalPlayer="true" playerName={this.props.localPlayer.name} partyLeader={this.props.localPlayer.partyLeader}></PlayerPlaymate>
                     {/* <div className="Board__player-hand-container">
                         <PlayerHand></PlayerHand>
                     </div> */}
@@ -36,8 +32,11 @@ class Board extends React.Component {
 
 const mapStateToProps = state => {
     const localPlayer = getLocalPlayer(state);
+    const remotePlayers = getRemotePlayers(state);
+    console.log(remotePlayers);
     return {
-        localPlayer
+        localPlayer,
+        remotePlayers
     };
 };
 

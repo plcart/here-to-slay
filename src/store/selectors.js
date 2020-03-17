@@ -24,7 +24,6 @@ export const getPartyLeaders = store => getPlayersState(store).partyLeaders.map(
 export const getPlayerById = (store, id) => {
     if (getPlayersState(store)) {
         let player = getPlayersState(store).byIds[id];
-        console.log(player);
         return {
             ...player,
             id,
@@ -40,3 +39,8 @@ export const getPlayers = store => getPlayersState(store).players.map(id => getP
 export const getLocalPlayerId = store => getPlayersState(store).currentPlayerId;
 
 export const getLocalPlayer = store => getPlayerById(store, getLocalPlayerId(store));
+
+export const getRemotePlayers = store => {
+    const localPlayerId = getLocalPlayerId(store);
+    return getPlayers(store).filter(player => player.id !== localPlayerId);
+};

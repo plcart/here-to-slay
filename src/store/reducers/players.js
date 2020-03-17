@@ -2,11 +2,31 @@ const initialState = {
     byIds: {
         1: {
             name: 'Arthur',
+            partyLeaderId: 6
+        },
+        2: {
+            name: 'Erica',
             partyLeaderId: 1
+        },
+        3: {
+            name: 'Anakin',
+            partyLeaderId: 3
+        },
+        4: {
+            name: 'TheLegend27',
+            partyLeaderId: 4
+        },
+        5: {
+            name: 'TheLegend27',
+            partyLeaderId: 5
+        },
+        6: {
+            name: 'TheLegend27',
+            partyLeaderId: 2
         }
     },
     currentPlayerId: 1,
-    players: [1],
+    players: [1, 2, 3, 4, 5, 6],
     currentPlayerTurnId: 1,
     partyLeadersById: {
         1: {

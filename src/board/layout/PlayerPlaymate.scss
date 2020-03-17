@@ -18,11 +18,28 @@
   }
 
   &--local &__party-leader-container {
+    font-size: 1vh;
     width: $party-leader-size-lg;
+
+    &:hover {
+      transform: scale(2);
+      translate: 7vh -12vh;
+      z-index: 2;
+    }
+  }
+
+  &--remote:first-child &__party-leader-container:hover {
+    translate: 8vh 14vh;
   }
 
   &--remote &__party-leader-container {
+    font-size: 0.6vh;
     width: $party-leader-size-sm;
+    &:hover {
+      transform: scale(3);
+      translate: 8vh 0;
+      z-index: 2;
+    }
   }
 
   &__heroes-container {
