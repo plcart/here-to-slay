@@ -1,3 +1,4 @@
+import { boardActionsEnum } from "../actions";
 
 const initialState = {
     byIds: {
@@ -279,7 +280,7 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
-        case 'DRAW_MONSTER': {
+        case boardActionsEnum.DRAW_MONSTER: {
             let remainingIds = [...state.remainingIds]
             let availableIds = [...state.availableIds];
             let newCard = remainingIds.shift();
@@ -292,7 +293,7 @@ export default function (state = initialState, action) {
                 remainingIds
             };
         }
-        case 'SLAY_MONSTER': {
+        case boardActionsEnum.SLAY_MONSTER: {
             let availableIds = [...state.availableIds];
             let slayedIds = [...state.slayedIds, ...availableIds.splice(availableIds.findIndex(id => id === action.payload.id), 1)];
             return {

@@ -1,28 +1,36 @@
+import { boardActionsEnum } from "../actions";
+
 const initialState = {
     byIds: {
         1: {
             name: 'Arthur',
-            partyLeaderId: 6
+            partyLeaderId: 6,
+            cardsAtHand: []
         },
         2: {
             name: 'Erica',
-            partyLeaderId: 1
+            partyLeaderId: 1,
+            cardsAtHand: []
         },
         3: {
             name: 'Anakin',
-            partyLeaderId: 3
+            partyLeaderId: 3,
+            cardsAtHand: []
         },
         4: {
             name: 'TheLegend27',
-            partyLeaderId: 4
+            partyLeaderId: 4,
+            cardsAtHand: []
         },
         5: {
             name: 'TheLegend27',
-            partyLeaderId: 5
+            partyLeaderId: 5,
+            cardsAtHand: []
         },
         6: {
             name: 'TheLegend27',
-            partyLeaderId: 2
+            partyLeaderId: 2,
+            cardsAtHand: []
         }
     },
     currentPlayerId: 1,
@@ -83,6 +91,23 @@ const initialState = {
 
 export default function (state = initialState, action) {
     switch (action.type) {
+        case boardActionsEnum.DRAW_CARD: {
+            const { cardId, playerId } = action.payload;
+            const currentPlayer = state.byIds[playerId];
+            return {
+                ...state,
+                byIds: {
+                    ...state.byIds,
+                    [playerId]: {
+                        ...currentPlayer,
+                        cardsAtHand: [
+                            ...currentPlayer.cardsAtHand,
+                            cardId
+                        ]
+                    }
+                }
+            };
+        }
         default:
             return state;
     }

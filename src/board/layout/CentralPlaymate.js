@@ -1,8 +1,8 @@
 import React from 'react';
 import './CentralPlaymate.scss';
 
-import { getMonstersDrawPile, getAvailableMonsters } from '../../store/selectors';
-import { drawMonster, slayMonster } from '../../store/actions'
+import { getMonstersDrawPile, getAvailableMonsters, getAvailableCardsPile, getLocalPlayerId } from '../../store/selectors';
+import { drawMonster, slayMonster, drawCard } from '../../store/actions'
 import { connect } from 'react-redux';
 
 import { CardWrapper } from './CardWrapper';
@@ -20,6 +20,12 @@ class CentralPlaymate extends React.Component {
 
     slayMonster(id) {
         this.props.slayMonster(id);
+    }
+
+    drawCardPile(card) {
+        if (card) {
+            this.props.drawCard(card.key, this.props.currentPlayerId);
+        }
     }
 
     render() {
@@ -53,15 +59,15 @@ class CentralPlaymate extends React.Component {
                 </div>
                 <div className="CentralPlaymate__card-pile-container">
                     <div className="CentralPlaymate__monster-pile-container">
-                        <CardPile cards={this.props.drawPile} color="dark" onCardDrawClick={this.monsterCardDraw}></CardPile>
+                        <CardPile cards={this.props.monsterDrawPile} color="dark" onCardDrawClick={this.monsterCardDraw}></CardPile>
                     </div>
                     <div className="CentralPlaymate__card-pile-container">
                         {/* <div className="CentralPlaymate__discard-pile-container">
                             <CardPile cards={this.state.drawCards} color="light"></CardPile>
-                        </div>
-                        <div className="CentralPlaymate__draw-pile-container">
-                            <CardPile cards={this.state.drawCards} color="light"></CardPile>
                         </div> */}
+                        <div className="CentralPlaymate__draw-pile-container">
+                            <CardPile cards={this.props.drawPile} color="light" onCardDrawClick={this.drawCardPile.bind(this, this.props.drawPile[0])}></CardPile>
+                        </div>
                     </div>
 
                 </div>
@@ -71,14 +77,19 @@ class CentralPlaymate extends React.Component {
 }
 
 const mapStateToProps = state => {
-    const drawPile = getMonstersDrawPile(state);
-    const [monster1, monster2, monster3] = getAvailableMonsters(state)
+    const monsterDrawPile = getMonstersDrawPile(state);
+    const drawPile = getAvailableCardsPile(state);
+    const currentPlayerId = getLocalPlayerId(state);
+
+    const [monster1, monster2, monster3] = getAvailableMonsters(state);
     return {
-        drawPile,
+        monsterDrawPile,
         monster1,
         monster2,
-        monster3
-    }
+        monster3,
+        drawPile,
+        currentPlayerId
+    };
 };
 
-export default connect(mapStateToProps, { drawMonster, slayMonster })(CentralPlaymate);
+export default connect(mapStateToProps, { drawMonster, slayMonster, drawCard })(CentralPlaymate);

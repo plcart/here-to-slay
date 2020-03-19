@@ -21,9 +21,9 @@ class Board extends React.Component {
                 </div>
                 <div className="Board__player-playmate">
                     <PlayerPlaymate isLocalPlayer="true" playerName={this.props.localPlayer.name} partyLeader={this.props.localPlayer.partyLeader}></PlayerPlaymate>
-                    {/* <div className="Board__player-hand-container">
-                        <PlayerHand></PlayerHand>
-                    </div> */}
+                    <div className="Board__player-hand-container">
+                        <PlayerHand cards={this.props.localPlayer.cardsAtHand}></PlayerHand>
+                    </div>
                 </div>
             </div >
         );
@@ -33,7 +33,7 @@ class Board extends React.Component {
 const mapStateToProps = state => {
     const localPlayer = getLocalPlayer(state);
     const remotePlayers = getRemotePlayers(state);
-    console.log(remotePlayers);
+    console.log(localPlayer);
     return {
         localPlayer,
         remotePlayers

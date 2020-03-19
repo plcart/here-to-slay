@@ -38,9 +38,25 @@ export const getPlayers = store => getPlayersState(store).players.map(id => getP
 
 export const getLocalPlayerId = store => getPlayersState(store).currentPlayerId;
 
-export const getLocalPlayer = store => getPlayerById(store, getLocalPlayerId(store));
+export const getLocalPlayer = store => {
+    const localPlayer = getPlayerById(store, getLocalPlayerId(store));
+    return {
+        ...localPlayer,
+        cardsAtHand: localPlayer.cardsAtHand.map(id => getCardsById(store, id))
+    };
+};
 
 export const getRemotePlayers = store => {
     const localPlayerId = getLocalPlayerId(store);
     return getPlayers(store).filter(player => player.id !== localPlayerId);
 };
+
+
+// Cards 
+
+export const getCardsState = store => store.cards;
+
+export const getCardsById = (store, id) => getCardsState(store) ? { ...getCardsState(store).byIds[id], id } : {};
+
+export const getAvailableCardsPile = store => getCardsState(store).availableIds.map((key, id) => ({ id, cardType: 'default', key }));
+
