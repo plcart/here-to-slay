@@ -33,7 +33,6 @@ class Board extends React.Component {
 const mapStateToProps = state => {
     const localPlayer = getLocalPlayer(state);
     const remotePlayers = getRemotePlayers(state);
-    console.log(localPlayer);
     return {
         localPlayer,
         remotePlayers

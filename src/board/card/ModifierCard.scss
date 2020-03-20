@@ -1,6 +1,6 @@
 @import "../../styles/variables";
 
-.ChallengeCard {
+.ModifierCard {
   height: 100%;
   width: 100%;
   display: flex;
@@ -17,15 +17,39 @@
     align-items: center;
     text-transform: uppercase;
     font-weight: 600;
+    margin-bottom: 1em;
   }
 
   &__image {
     object-fit: contain;
-    width: 100%;
   }
 
   &__text {
     font-size: 0.8em;
     margin: 0.8em 0;
+  }
+
+  &__attributes {
+    width: 100%;
+    font-size: 2em;
+    display: flex;
+    padding-right: 0.5em;
+    justify-content: center;
+  }
+
+  &__attribute {
+    margin: 1px 1px;
+    font-weight: 600;
+    &--add {
+      color: #70a84d;
+    }
+
+    &--subtract {
+      color: #e02325;
+    }
+
+    &--divisor {
+      margin: 1px 2px;
+    }
   }
 }

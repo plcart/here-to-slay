@@ -33,10 +33,10 @@ class CentralPlaymate extends React.Component {
             <div className="CentralPlaymate">
                 <div className="CentralPlaymate__monsters-container">
                     {
-                        this.props.monster1 &&
-                        <div className="CentralPlaymate__monster-container" onClick={this.slayMonster.bind(this, this.props.monster1.id)}>
-                            <CardWrapper cardType={this.props.monster1.cardType} flip="true" >
-                                <MonsterCard monster={this.props.monster1}></MonsterCard>
+                        this.props.monster3 &&
+                        <div className="CentralPlaymate__monster-container" onClick={this.slayMonster.bind(this, this.props.monster3.id)}>
+                            <CardWrapper cardType={this.props.monster3.cardType} flip="true">
+                                <MonsterCard monster={this.props.monster3}></MonsterCard>
                             </CardWrapper>
                         </div>
                     }
@@ -49,10 +49,10 @@ class CentralPlaymate extends React.Component {
                         </div>
                     }
                     {
-                        this.props.monster3 &&
-                        <div className="CentralPlaymate__monster-container" onClick={this.slayMonster.bind(this, this.props.monster3.id)}>
-                            <CardWrapper cardType={this.props.monster3.cardType} flip="true">
-                                <MonsterCard monster={this.props.monster3}></MonsterCard>
+                        this.props.monster1 &&
+                        <div className="CentralPlaymate__monster-container" onClick={this.slayMonster.bind(this, this.props.monster1.id)}>
+                            <CardWrapper cardType={this.props.monster1.cardType} flip="true" >
+                                <MonsterCard monster={this.props.monster1}></MonsterCard>
                             </CardWrapper>
                         </div>
                     }

@@ -37,7 +37,7 @@ const initialState = {
             key: 'c5',
             text: 'Play this card after any player (includind you) rolls the dice. +3 or -1 to that roll.',
             win: 3,
-            lose: 2,
+            lose: 1,
             image: 'assets/modifiers/modifier-plus-three.png'
         },
         6: {
@@ -50,9 +50,9 @@ const initialState = {
         }
     },
     availableIds: [
-        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-        2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5,
-        5, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6
+        1, 2, 3, 4, 5, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        2, 2, 2, 3, 3, 3, 4, 4, 5,
+        5, 5, 6, 6, 6, 6, 6, 6, 6, 6
     ]
 };
 

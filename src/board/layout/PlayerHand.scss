@@ -5,10 +5,15 @@
   justify-content: center;
   padding-left: 10vh;
   &__card {
+    box-shadow: -1px 0px 2px 0px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
     transition: all 200ms linear;
     height: 90%;
+    z-index: 1;
     width: 16vh;
     margin-left: -10vh;
+    font-size: 1vh;
+    cursor: pointer;
     &:hover {
       translate: 0px -10px;
       margin-right: 10vh;
