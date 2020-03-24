@@ -47,9 +47,67 @@ const initialState = {
             win: 2,
             lose: 2,
             image: 'assets/modifiers/modifier-two.png'
+        },
+        7: {
+            cardType: 'magic',
+            key: 'c7',
+            name: 'Destructive Spell',
+            text: 'DISCARD a card, then DESTROY a Hero Card.',
+            image: 'assets/magics/destructive-spell.png'
+        },
+        8: {
+            cardType: 'magic',
+            key: 'c8',
+            name: 'Entangling Trap',
+            text: 'DISCARD 2 Cards, then STEAL a Hero Card.',
+            image: 'assets/magics/entangling-trap.png'
+        },
+        9: {
+            cardType: 'magic',
+            key: 'c9',
+            name: 'Critical Boost',
+            text: 'DRAW 3 cards and DISCARD a card.',
+            image: 'assets/magics/critical-boost.png'
+        },
+        10: {
+            cardType: 'magic',
+            key: 'c10',
+            name: 'Enchanted Spell',
+            text: '+2 to all your rolls until the end of your turn.',
+            image: 'assets/magics/enchanced-spell.png'
+        },
+        11: {
+            cardType: 'magic',
+            key: 'c11',
+            name: 'Forced Exchange',
+            text: 'Choose a player, STEAL a Hero card from that player\'s, then move a Hero card from your Party to that player\'s Party.',
+            image: 'assets/magics/forced-exchange.png'
+        },
+        12: {
+            cardType: 'magic',
+            key: 'c12',
+            name: 'Winds of Change',
+            text: 'Return an Item card equipped to any player\'s Hero card to that player\'s hand, then DRAW a card.',
+            image: 'assets/magics/winds-of-change.png'
+        },
+        13: {
+            cardType: 'magic',
+            key: 'c13',
+            name: 'Forceful Winds',
+            text: 'Return every equipped item card to its respective player\'s hand.',
+            image: 'assets/magics/forceful-winds.png'
+        },
+        14: {
+            cardType: 'magic',
+            key: 'c14',
+            name: 'Call to the Fallen',
+            text: 'Search the discard pile for a Hero card and add it to your hand.',
+            image: 'assets/magics/call-to-fallen.png'
         }
+
     },
     availableIds: [
+        7, 7, 8, 8, 9, 9, 10, 10, 11, 12, 12, 13, 14,
         1, 2, 3, 4, 5, 6, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
         2, 2, 2, 3, 3, 3, 4, 4, 5,
         5, 5, 6, 6, 6, 6, 6, 6, 6, 6

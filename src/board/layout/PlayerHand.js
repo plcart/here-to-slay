@@ -4,6 +4,7 @@ import './PlayerHand.scss';
 import { CardWrapper } from './CardWrapper';
 import { ChallengeCard } from '../card/ChallengeCard';
 import { ModifierCard } from '../card/ModifierCard';
+import MagicCard from '../card/MagicCard';
 
 export class PlayerHand extends React.Component {
 
@@ -13,6 +14,8 @@ export class PlayerHand extends React.Component {
                 return <ChallengeCard card={card}></ChallengeCard>
             case 'modifier':
                 return <ModifierCard card={card}></ModifierCard>
+            case 'magic':
+                return <MagicCard card={card}></MagicCard>
             default:
                 return <div></div>
         }

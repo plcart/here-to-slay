@@ -1,0 +1,33 @@
+@import "../../styles/variables";
+
+.MagicCard {
+  border: 6px solid #7a7776;
+  border-radius: 4px;
+  background-color: $card-light-background;
+  height: 100%;
+  width: 100%;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  &__name {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 0.2em 0 0;
+  }
+
+  &__type {
+    margin: 0 0 1em;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0.2em;
+    line-height: 1em;
+    font-size: 0.8em;
+    height: 20%;
+  }
+}
